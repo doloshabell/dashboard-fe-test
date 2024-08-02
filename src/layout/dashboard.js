@@ -57,12 +57,12 @@ function DashboardLayout() {
 
   return (
     <div className="flex h-screen w-full">
-      <div className="xl:flex fixed hidden bg-white h-screen overflow-y-auto custom-scrollbar-none">
+      <div className="xl:flex fixed bg-white h-screen overflow-y-auto custom-scrollbar-none">
         <Sidebar isOpen={isOpen} onClose={() => setIsOpen(false)} />
       </div>
 
       <div className="h-full custom-scrollbar-thin flex-1 overflow-y-auto bg-[#F4F7FE]">
-        <main className="h-full flex-none mx-[12px] transition-all xl:ml-[300px]">
+        <main className="h-full flex-none mx-7 transition-all xl:ml-[300px]">
           <div className="h-full">
             <Navbar
               onOpenSidebar={() => setIsOpen(true)}
@@ -70,7 +70,7 @@ function DashboardLayout() {
               routeText={currentRoute}
               secondary={getActiveNavbar(listRoutes)}
             />
-            <div className="mx-auto mb-auto h-full min-h-[84vh] p-2">
+            <div className="mx-auto mb-auto h-full w-full min-h-[84vh] p-2">
               <Routes>
                 {getRoutes(listRoutes)}
                 <Route

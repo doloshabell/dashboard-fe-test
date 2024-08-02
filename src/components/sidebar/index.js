@@ -7,8 +7,8 @@ import FooterSidebar from "./footerSidebar";
 function Sidebar({ isOpen, onClose }) {
   return (
     <div
-      className={`h-screen pb-5 flex duration-[175ms] min-h-full flex-col shadow-2xl shadow-white/5 transition-all w-[300px] ${
-        isOpen ? "translate-x-0" : "-translate-x-96"
+      className={`h-screen pb-5 flex duration-[175ms] !z-50 min-h-full flex-col shadow-2xl shadow-white/5 transition-all w-[300px] md:!z-50 lg:!z-50 xl:!z-0 ${
+        isOpen ? "translate-x-0 !z-[99]" : "-translate-x-96"
       }`}
     >
       <span
@@ -24,15 +24,12 @@ function Sidebar({ isOpen, onClose }) {
         </div>
       </div>
       <div class="mt-[52px] mb-7 border-b mx-5 bg-gray-300" />
-      {/* Nav item */}
 
       <ul className="mb-auto pt-1 px-4">
         <ListMenu routes={listRoutes} />
       </ul>
 
-      {/* Free Horizon Card */}
       <div className="flex justify-center">
-        {/* <SidebarCard /> */}
         <FooterSidebar />
       </div>
     </div>
