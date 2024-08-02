@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import listRoutes from "../routes/listRoutes";
+import Sidebar from "../components/sidebar";
+import Navbar from "../components/navbar";
 
-function DashboardLayout(props) {
-  const { ...rest } = props;
+function DashboardLayout() {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(true);
-  const [currentRoute, setCurrentRoute] = useState("");
+  const [currentRoute, setCurrentRoute] = useState(window.location.href);
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -19,7 +20,6 @@ function DashboardLayout(props) {
   }, [location.pathname]);
 
   const getActiveRoute = (routes) => {
-    let activeRoute = "";
     for (let i = 0; i < routes.length; i++) {
       if (
         window.location.href.indexOf(
@@ -29,7 +29,6 @@ function DashboardLayout(props) {
         setCurrentRoute(routes[i].name);
       }
     }
-    return activeRoute;
   };
 
   const getRoutes = (routes) => {
@@ -44,20 +43,39 @@ function DashboardLayout(props) {
     });
   };
 
+  const getActiveNavbar = (routes) => {
+    let activeNavbar = false;
+    for (let i = 0; i < routes.length; i++) {
+      if (
+        window.location.href.indexOf(routes[i].layout + routes[i].path) !== -1
+      ) {
+        return routes[i].secondary;
+      }
+    }
+    return activeNavbar;
+  };
+
   return (
-    <div className="flex h-full w-full">
-      <div className="h-full w-full bg-[#F4F7Fe]">
-        <main
-          className="mx-[12px] h-full flex-none transition-all md:pr-2 xl:ml-[313px]"
-        >
+    <div className="flex h-screen w-full">
+      <div className="xl:flex fixed hidden bg-white h-screen overflow-y-auto custom-scrollbar-none">
+        <Sidebar isOpen={isOpen} onClose={() => setIsOpen(false)} />
+      </div>
+
+      <div className="h-full custom-scrollbar-thin flex-1 overflow-y-auto bg-[#F4F7FE]">
+        <main className="h-full flex-none mx-[12px] transition-all xl:ml-[300px]">
           <div className="h-full">
-            <div className="pt-5s mx-auto mb-auto h-full min-h-[84vh] p-2 md:pr-2">
+            <Navbar
+              onOpenSidebar={() => setIsOpen(true)}
+              logoText={"Horizon UI Tailwind React"}
+              routeText={currentRoute}
+              secondary={getActiveNavbar(listRoutes)}
+            />
+            <div className="mx-auto mb-auto h-full min-h-[84vh] p-2">
               <Routes>
                 {getRoutes(listRoutes)}
-
                 <Route
                   path="/"
-                  element={<Navigate to="/dashboard" replace />}
+                  element={<Navigate to="/dashboard/home" replace />}
                 />
               </Routes>
             </div>
