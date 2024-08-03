@@ -44,18 +44,6 @@ function DashboardLayout() {
     });
   };
 
-  const getActiveNavbar = (routes) => {
-    let activeNavbar = false;
-    for (let i = 0; i < routes.length; i++) {
-      if (
-        window.location.href.indexOf(routes[i].layout + routes[i].path) !== -1
-      ) {
-        return routes[i].secondary;
-      }
-    }
-    return activeNavbar;
-  };
-
   return (
     <div className="flex h-screen">
       <div className="xl:flex fixed bg-white h-screen overflow-y-auto custom-scrollbar-none">
