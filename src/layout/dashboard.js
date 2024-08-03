@@ -69,7 +69,7 @@ function DashboardLayout() {
               onOpenSidebar={() => setIsOpen(!isOpen)}
               routeText={currentRoute}
             />
-            <div className="ml-4 -full w-full min-h-[84vh]">
+            <div className="ml-4 -full w-full h-full">
               <Routes>
                 {getRoutes(listRoutes)}
                 <Route
