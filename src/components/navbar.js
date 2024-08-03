@@ -16,7 +16,7 @@ function Navbar(props) {
   const { onOpenSidebar, routeText } = props;
 
   return (
-    <nav className="sticky top-4 z-10 flex flex-row flex-wrap items-center justify-between rounded-xl bg-white/10 p-2 backdrop-blur-xl">
+    <nav className="sticky top-4 z-10 flex w-[932px] items-center justify-between rounded-xl bg-white/10 p-2 backdrop-blur-xl">
       <div className="ml-[6px]">
         <div className="h-6 w-[224px] pt-1">
           <a
@@ -52,7 +52,7 @@ function Navbar(props) {
           <input
             type="text"
             placeholder="Search..."
-            class="block h-full w-full rounded-full bg-[#F4F7FE] text-sm font-medium text-[#1B254B] outline-none placeholder:!text-gray-400 sm:w-fit"
+            className="block h-full w-full rounded-full bg-[#F4F7FE] text-sm font-medium text-[#1B254B] outline-none placeholder:!text-gray-400 sm:w-fit"
           />
         </div>
 

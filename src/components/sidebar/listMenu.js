@@ -38,7 +38,7 @@ function ListMenu(props) {
             </p>
           </li>
           {activeRoute(route.path) ? (
-            <div class="absolute right-0 top-px h-9 w-1 rounded-lg bg-[#422AFB]" />
+            <div className="absolute right-0 top-px h-9 w-1 rounded-lg bg-[#422AFB]" />
           ) : null}
         </div>
       </Link>

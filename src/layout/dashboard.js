@@ -3,6 +3,7 @@ import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import listRoutes from "../routes/listRoutes";
 import Sidebar from "../components/sidebar";
 import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 
 function DashboardLayout() {
   const location = useLocation();
@@ -56,21 +57,19 @@ function DashboardLayout() {
   };
 
   return (
-    <div className="flex h-screen w-full">
+    <div className="flex h-screen">
       <div className="xl:flex fixed bg-white h-screen overflow-y-auto custom-scrollbar-none">
         <Sidebar isOpen={isOpen} onClose={() => setIsOpen(false)} />
       </div>
 
       <div className="h-full custom-scrollbar-thin flex-1 overflow-y-auto bg-[#F4F7FE]">
-        <main className="h-full flex-none mx-7 transition-all xl:ml-[300px]">
+        <main className="h-full flex-none mr-11 transition-all xl:ml-[310px]">
           <div className="h-full">
             <Navbar
-              onOpenSidebar={() => setIsOpen(true)}
-              logoText={"Horizon UI Tailwind React"}
+              onOpenSidebar={() => setIsOpen(!isOpen)}
               routeText={currentRoute}
-              secondary={getActiveNavbar(listRoutes)}
             />
-            <div className="mx-auto mb-auto h-full w-full min-h-[84vh] p-2">
+            <div className="ml-4 -full w-full min-h-[84vh]">
               <Routes>
                 {getRoutes(listRoutes)}
                 <Route
@@ -78,6 +77,9 @@ function DashboardLayout() {
                   element={<Navigate to="/dashboard/home" replace />}
                 />
               </Routes>
+              <div className="mt-6 py-3">
+                <Footer />
+              </div>
             </div>
           </div>
         </main>

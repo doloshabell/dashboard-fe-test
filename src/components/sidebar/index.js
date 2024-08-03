@@ -20,10 +20,10 @@ function Sidebar({ isOpen, onClose }) {
 
       <div className={`mx-[56px] mt-[48px] flex items-center`}>
         <div className="mt-1 ml-1 h-2.5 font-poppins text-[26px] font-bold uppercase text-[#1B254B]">
-          Horizon <span class="font-medium">FREE</span>
+          Horizon <span className="font-medium">FREE</span>
         </div>
       </div>
-      <div class="mt-[52px] mb-7 border-b mx-5 bg-gray-300" />
+      <div className="mt-[52px] mb-7 border-b mx-5 bg-gray-300" />
 
       <ul className="mb-auto pt-1 px-4">
         <ListMenu routes={listRoutes} />
