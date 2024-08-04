@@ -49,8 +49,8 @@ function DashboardLayout() {
       <Sidebar isOpen={isOpen} onClose={() => setIsOpen(false)} />
 
       <div className="h-full w-full custom-scrollbar-thin flex-1 overflow-y-auto bg-[#F4F7FE]">
-        <main className="h-full flex-none mr-11 transition-all md:pr-2 xl:ml-[310px]">
-          <div className="h-full">
+        <main className="h-full flex-none mr-11 transition-all md:pr-2 xl:ml-[310px] sm:mx-1">
+          <div className="h-full sm:flex sm:flex-col sm:justify-between sm:w-full">
             <Navbar
               onOpenSidebar={() => setIsOpen(!isOpen)}
               routeText={currentRoute}

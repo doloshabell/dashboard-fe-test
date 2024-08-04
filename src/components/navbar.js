@@ -16,7 +16,7 @@ function Navbar(props) {
   const { onOpenSidebar, routeText } = props;
 
   return (
-    <nav className="sticky top-4 z-40 flex flex-row flex-wrap items-center justify-between rounded-xl bg-white/10 p-2 backdrop-blur-xl">
+    <nav className="sm:px-0 sticky top-4 z-40 flex flex-row flex-wrap items-center justify-between rounded-xl p-2 bg-white/10 backdrop-blur-xl">
       <div className="ml-[6px]">
         <div className="h-6 w-[224px] pt-1">
           <a
@@ -44,7 +44,7 @@ function Navbar(props) {
         </p>
       </div>
 
-      <div className="relative mt-[3px] flex h-[61px] w-[355px] flex-grow items-center justify-around gap-2 rounded-full bg-white px-2 py-2 shadow-xl shadow-[#7090b014] md:w-[365px] md:flex-grow-0 md:gap-1 xl:w-[365px] xl:gap-2">
+      <div className="relative mt-[3px] flex h-[61px] w-[355px] flex-grow items-center justify-around gap-1 rounded-full bg-white px-2 py-2 shadow-xl shadow-[#7090b014] md:w-[365px] md:flex-grow-0 md:gap-1 xl:w-[365px] xl:gap-2">
         <div className="flex h-full items-center rounded-full bg-[#F4F7FE] text-[#1B254B] xl:w-[225px]">
           <p className="pl-3 pr-2 text-xl">
             <MdSearch className="h-5 w-5 text-gray-700" />
@@ -71,7 +71,7 @@ function Navbar(props) {
           }
           animation="origin-[65%_0%] md:origin-top-right transition-all duration-300 ease-in-out"
           children={
-            <div className="flex w-[360px] flex-col gap-5 rounded-[20px] bg-white px-5 py-7 shadow-xl shadow-[#7090B014] sm:w-[460px]">
+            <div className="flex w-[360px] flex-col gap-5 rounded-[20px] bg-white px-5 py-7 shadow-xl shadow-[#7090B014] md:w-[460px]">
               <div className="flex items-center justify-between">
                 <p className="text-base font-bold text-[#1B254B]">
                   Notification
