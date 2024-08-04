@@ -1,7 +1,7 @@
 
 # Technical Test - Habell Dolosha Purba
 
-This repository is for used Technical Test Project.
+This repository is used for Technical Test Project.
 
 
 
@@ -44,7 +44,7 @@ Start the server
 
 ## FAQ
 
-#### This project made with
+#### This project made with several frameworks and libraries, such as:
 
 - React JS
 - Tailwind CSS
