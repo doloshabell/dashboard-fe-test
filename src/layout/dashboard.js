@@ -7,7 +7,7 @@ import Footer from "../components/footer";
 
 function DashboardLayout() {
   const location = useLocation();
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [currentRoute, setCurrentRoute] = useState(window.location.href);
 
   useEffect(() => {
