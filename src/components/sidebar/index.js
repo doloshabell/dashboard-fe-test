@@ -7,8 +7,8 @@ import FooterSidebar from "./footerSidebar";
 function Sidebar({ isOpen, onClose }) {
   return (
     <div
-      className={`h-screen pb-5 flex duration-[175ms] !z-50 min-h-full flex-col shadow-2xl shadow-white/5 transition-all w-[300px] md:!z-50 lg:!z-50 xl:!z-0 ${
-        isOpen ? "translate-x-0 !z-[99]" : "-translate-x-96"
+      className={`sm:none duration-175 linear fixed !z-50 flex min-h-full flex-col bg-white pb-10 shadow-2xl shadow-white/5 transition-all w-[300px] md:!z-50 lg:!z-50 xl:!z-0 ${
+        isOpen ? "translate-x-0" : "-translate-x-96"
       }`}
     >
       <span

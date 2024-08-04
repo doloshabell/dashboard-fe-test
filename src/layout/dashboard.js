@@ -7,7 +7,7 @@ import Footer from "../components/footer";
 
 function DashboardLayout() {
   const location = useLocation();
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [currentRoute, setCurrentRoute] = useState(window.location.href);
 
   useEffect(() => {
@@ -45,19 +45,17 @@ function DashboardLayout() {
   };
 
   return (
-    <div className="flex h-screen">
-      <div className="xl:flex fixed bg-white h-screen overflow-y-auto custom-scrollbar-none">
-        <Sidebar isOpen={isOpen} onClose={() => setIsOpen(false)} />
-      </div>
+    <div className="flex h-full w-full">
+      <Sidebar isOpen={isOpen} onClose={() => setIsOpen(false)} />
 
-      <div className="h-full custom-scrollbar-thin flex-1 overflow-y-auto bg-[#F4F7FE]">
-        <main className="h-full flex-none mr-11 transition-all xl:ml-[310px]">
+      <div className="h-full w-full custom-scrollbar-thin flex-1 overflow-y-auto bg-[#F4F7FE]">
+        <main className="h-full flex-none mr-11 transition-all md:pr-2 xl:ml-[310px]">
           <div className="h-full">
             <Navbar
               onOpenSidebar={() => setIsOpen(!isOpen)}
               routeText={currentRoute}
             />
-            <div className="ml-4 -full w-full h-full">
+            <div className="mx-auto mb-auto h-full min-h-[80vh] p-2 md:pr-2">
               <Routes>
                 {getRoutes(listRoutes)}
                 <Route
